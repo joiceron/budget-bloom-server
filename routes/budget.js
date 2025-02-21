@@ -5,6 +5,11 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(budgetController.getBudgetOverview);
+  .get(budgetController.getBudgetOverview)
+  
+router
+  .route("/:id")
+  .put(budgetController.updateBudgetOverview);
+
 
 export default router;

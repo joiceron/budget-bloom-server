@@ -1,5 +1,5 @@
-exports.up = function (knex) {
-  return knex.schema.createTable("balance", function (table) {
+export function up(knex) {
+  return knex.schema.createTable("balance", (table) => {
     table.increments("id");
     table.integer("id_user").notNullable().defaultTo(1);
     table.string("month", 2).notNullable();
@@ -18,6 +18,6 @@ exports.up = function (knex) {
   });
 };
 
-exports.down = function (knex) {
+export function down(knex) {
   return knex.schema.dropTableIfExists("balance");
 };

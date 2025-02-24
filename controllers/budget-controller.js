@@ -18,17 +18,15 @@ const getBudgetOverview = async (_req, res) => {
   }
 };
 
-const decimalRegex = /^\d+(\.\d{2})?$/;
-
 const validateBodyData = (body) => {
   const errors = [];
   const { salary, extras, rent, food, utilities, transportation } = body;
-  if (!salary) errors.push("salary is required.");
-  if (!extras) errors.push("extras is required.");
-  if (!rent) errors.push("rent is required.");
-  if (!food) errors.push("food is required.");
-  if (!utilities) errors.push("utilities is required.");
-  if (!transportation) errors.push("transportation is required.");
+  if (!salary) errors.push("Salary is required.");
+  if (!extras) errors.push("Extras is required.");
+  if (!rent) errors.push("Rent is required.");
+  if (!food) errors.push("Food is required.");
+  if (!utilities) errors.push("Utilities is required.");
+  if (!transportation) errors.push("Transportation is required.");
 
   return { isValid: errors.length === 0, errors };
 };
